@@ -16,11 +16,19 @@
   overflow: hidden;
 }
 
-.home-page *, .home-page *::before, .home-page *::after {
+.home-page *,
+.home-page *::before,
+.home-page *::after {
   box-sizing: border-box;
 }
-.home-page a { color: inherit; text-decoration: none; }
-.home-page a:focus-visible { outline: 2px solid var(--home-ac); outline-offset: 3px; }
+.home-page a {
+  color: inherit;
+  text-decoration: none;
+}
+.home-page a:focus-visible {
+  outline: 2px solid var(--home-ac);
+  outline-offset: 3px;
+}
 
 .home-page .hero {
   position: relative;
@@ -31,8 +39,16 @@
   overflow: hidden;
   padding: 100px 0 70px;
   background:
-    radial-gradient(520px 380px at 88% 82%, rgba(244,229,26,.08), transparent 70%),
-    radial-gradient(800px 520px at 72% 45%, rgba(95,211,127,.15), transparent 65%);
+    radial-gradient(
+      520px 380px at 88% 82%,
+      rgba(244, 229, 26, 0.08),
+      transparent 70%
+    ),
+    radial-gradient(
+      800px 520px at 72% 45%,
+      rgba(95, 211, 127, 0.15),
+      transparent 65%
+    );
 }
 
 .home-page #cv {
@@ -52,11 +68,13 @@
   margin: 0 auto;
   padding: 0 clamp(20px, 5vw, 44px);
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   gap: 30px;
   align-items: center;
 }
-.home-page .hero-copy { min-width: 0; }
+.home-page .hero-copy {
+  min-width: 0;
+}
 
 .home-page .badge {
   display: inline-flex;
@@ -65,9 +83,9 @@
   padding: 6px 14px;
   border: 1px solid var(--home-line);
   border-radius: 99px;
-  background: rgba(6,32,26,.8);
+  background: rgba(6, 32, 26, 0.8);
   color: var(--home-ac);
-  font-size: .95rem;
+  font-size: 0.95rem;
   font-weight: 500;
 }
 .home-page .badge i {
@@ -79,29 +97,52 @@
   animation: home-pulse 1.6s infinite;
 }
 @keyframes home-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(95,211,127,.7); }
-  70% { box-shadow: 0 0 0 9px rgba(95,211,127,0); }
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(95, 211, 127, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 9px rgba(95, 211, 127, 0);
+  }
 }
 
 .home-page h1 {
   margin: 22px 0 20px;
   color: var(--home-text);
   font: 800 clamp(2.5rem, 5.6vw, 4.5rem)/1.04 var(--home-font);
-  letter-spacing: -.03em;
+  letter-spacing: -0.03em;
 }
 .home-page h1 em {
   font-style: normal;
-  background: linear-gradient(100deg, var(--home-ac), var(--home-yellow), var(--home-ac));
+  background: linear-gradient(
+    100deg,
+    var(--home-ac),
+    var(--home-yellow),
+    var(--home-ac)
+  );
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   animation: home-shimmer 5s linear infinite;
 }
-@keyframes home-shimmer { to { background-position: -200% 0; } }
+@keyframes home-shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
 
-.home-page .lead { max-width: 44ch; color: var(--home-muted); font-size: 1.25rem; }
-.home-page .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+.home-page .lead {
+  max-width: 44ch;
+  color: var(--home-muted);
+  font-size: 1.25rem;
+}
+.home-page .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
 .home-page .btn {
   display: inline-block;
   padding: 14px 28px;
@@ -109,22 +150,33 @@
   background: var(--home-yellow);
   color: #1a1700;
   font-weight: 700;
-  box-shadow: 0 0 30px rgba(244,229,26,.3);
-  transition: background .25s, transform .25s, box-shadow .25s;
+  box-shadow: 0 0 30px rgba(244, 229, 26, 0.3);
+  transition:
+    background 0.25s,
+    transform 0.25s,
+    box-shadow 0.25s;
 }
 .home-page .btn:hover {
   background: #fff27a;
   transform: translateY(-3px);
-  box-shadow: 0 0 46px rgba(244,229,26,.55);
+  box-shadow: 0 0 46px rgba(244, 229, 26, 0.55);
 }
 .home-page .btn.line {
   background: transparent;
   color: var(--home-text);
   box-shadow: inset 0 0 0 1.5px var(--home-line);
 }
-.home-page .btn.line:hover { box-shadow: inset 0 0 0 1.5px var(--home-ac); }
+.home-page .btn.line:hover {
+  box-shadow: inset 0 0 0 1.5px var(--home-ac);
+}
 
-.home-page .col { display: flex; flex-direction: column; align-items: center; gap: 14px; min-width: 0; }
+.home-page .col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
 .home-page .core {
   width: min(400px, 72vw);
   aspect-ratio: 1;
@@ -132,24 +184,34 @@
   place-items: center;
   animation: home-float 6s ease-in-out infinite;
 }
-@keyframes home-float { 50% { transform: translateY(-12px); } }
+@keyframes home-float {
+  50% {
+    transform: translateY(-12px);
+  }
+}
 .home-page .core img {
   display: block;
   width: 100%;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 0 34px rgba(95,211,127,.55));
-  animation: home-pop 1.3s cubic-bezier(.2,.8,.2,1) both;
+  filter: drop-shadow(0 0 34px rgba(95, 211, 127, 0.55));
+  animation: home-pop 1.3s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 @keyframes home-pop {
-  from { opacity: 0; transform: scale(.82) rotate(-4deg); }
-  to { opacity: 1; transform: scale(1) rotate(0); }
+  from {
+    opacity: 0;
+    transform: scale(0.82) rotate(-4deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
 }
 .home-page .wm {
   text-align: center;
   font: 800 clamp(1.5rem, 3vw, 2.2rem)/1 var(--home-font);
-  letter-spacing: .32em;
-  padding-left: .32em;
+  letter-spacing: 0.32em;
+  padding-left: 0.32em;
 }
 .home-page .stat {
   position: absolute;
@@ -159,37 +221,232 @@
   padding: 12px 18px;
   border: 1px solid var(--home-line);
   border-radius: 12px;
-  background: rgba(6,32,26,.85);
-  font: 400 .9rem/1.6 Consolas, Menlo, monospace;
+  background: rgba(6, 32, 26, 0.85);
+  font:
+    400 0.9rem/1.6 Consolas,
+    Menlo,
+    monospace;
   color: var(--home-muted);
 }
-.home-page .stat b { display: block; color: var(--home-ac); font: 700 1.6rem Consolas, Menlo, monospace; }
+.home-page .stat b {
+  display: block;
+  color: var(--home-ac);
+  font:
+    700 1.6rem Consolas,
+    Menlo,
+    monospace;
+}
 
+/* Keep the main heading on one line on desktop */
+.home-page h1 {
+  font-size: clamp(2rem, 4.3vw, 3.8rem);
+  white-space: nowrap;
+}
+
+/* ========================================
+   RESPONSIVE HERO — TABLET & MOBILE
+======================================== */
 @media (max-width: 900px) {
-  .home-page .hero { min-height: 100vh; align-items: stretch; }
-  .home-page .wrap { grid-template-columns: 1fr; gap: 24px; }
-  .home-page .col { order: -1; }
-  .home-page .core { width: min(230px, 58vw); }
+  .home-page .hero {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: stretch;
+    padding: 110px 0 35px;
+  }
+
+  .home-page .wrap {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 22px;
+    padding-inline: 24px;
+  }
+
+  /* Logo and all its animations stay at the top, centered */
+  .home-page .col {
+    order: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .home-page .core {
+    width: min(280px, 62vw);
+    margin-inline: auto;
+  }
+
+  .home-page .core img {
+    width: 100%;
+    height: auto;
+  }
+
+  .home-page .wm {
+    text-align: center;
+  }
+
+  /* All copy appears under the logo, centered */
+  .home-page .hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 680px;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .home-page .badge {
+    align-self: center;
+  }
+
+  .home-page h1 {
+    width: 100%;
+    margin: 18px 0;
+    font-size: clamp(1.05rem, 5.2vw, 3rem);
+    line-height: 1.2;
+    letter-spacing: -0.045em;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .home-page .lead {
+    width: 100%;
+    max-width: 48ch;
+    margin: 0 auto;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    text-align: center;
+  }
+
+  /* Buttons arranged vertically */
+  .home-page .actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    width: min(100%, 320px);
+    gap: 12px;
+    margin: 24px auto 0;
+  }
+
+  .home-page .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
   .home-page .stat {
     position: relative;
+    order: 1;
     right: auto;
     bottom: auto;
-    align-self: flex-start;
-    margin: 30px 20px 0;
+    align-self: center;
+    width: fit-content;
+    max-width: calc(100% - 32px);
+    margin: 28px auto 0;
+    text-align: center;
   }
 }
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
 @media (max-width: 480px) {
-  .home-page .hero { padding-bottom: 36px; }
-  .home-page .wrap { padding-inline: 20px; }
-  .home-page h1 { font-size: clamp(2.2rem, 10vw, 3rem); }
-  .home-page .lead { font-size: 1.05rem; }
-  .home-page .actions { gap: 10px; }
-  .home-page .btn { padding: 12px 18px; }
-  .home-page .stat { margin-inline: 20px; font-size: .8rem; }
+  .home-page .hero {
+    padding-top: 95px;
+    padding-bottom: 28px;
+  }
+
+  .home-page .wrap {
+    padding-inline: 16px;
+    gap: 18px;
+  }
+
+  .home-page .core {
+    width: min(230px, 62vw);
+  }
+
+  .home-page .wm {
+    font-size: 1.35rem;
+    letter-spacing: 0.25em;
+    padding-left: 0.25em;
+  }
+
+  .home-page h1 {
+    font-size: clamp(0.9rem, 5.1vw, 1.45rem);
+    letter-spacing: -0.05em;
+    margin: 16px 0;
+  }
+
+  .home-page .badge {
+    gap: 8px;
+    padding: 6px 11px;
+    font-size: 0.82rem;
+  }
+
+  .home-page .lead {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .home-page .actions {
+    width: min(100%, 290px);
+    margin-top: 20px;
+  }
+
+  .home-page .btn {
+    padding: 12px 18px;
+  }
+
+  .home-page .stat {
+    margin-top: 24px;
+    padding: 10px 14px;
+    font-size: 0.75rem;
+  }
+
+  .home-page .stat b {
+    font-size: 1.35rem;
+  }
 }
+
 @media (prefers-reduced-motion: reduce) {
-  .home-page *, .home-page *::before, .home-page *::after {
+  .home-page *,
+  .home-page *::before,
+  .home-page *::after {
     animation: none !important;
     transition: none !important;
+  }
+}
+
+
+/* Large screens: title in two lines */
+.home-page h1 {
+  white-space: normal;
+  max-width: 600px;
+}
+
+/* Medium and small screens: title in one line */
+@media (max-width: 900px) {
+  .home-page h1 {
+    max-width: 100%;
+    white-space: nowrap;
+    font-size: clamp(0.9rem, 5.2vw, 3.2rem);
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-page h1 {
+    font-size: clamp(0.85rem, 5vw, 1.45rem);
+    white-space: nowrap;
   }
 }

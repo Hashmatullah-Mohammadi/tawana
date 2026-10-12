@@ -209,7 +209,7 @@ function Home() {
                 View courses
               </a>
               <a className="btn line" href="#contact">
-                Contact us
+                Our Services
               </a>
             </div>
           </div>
